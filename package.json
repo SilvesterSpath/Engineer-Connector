@@ -1,7 +1,7 @@
 {
   "name": "engconnector",
   "version": "1.0.0",
-  "description": "Social network for engineers",
+  "description": "Social network for Engineers",
   "main": "server.js",
   "scripts": {
     "start": "node server",
