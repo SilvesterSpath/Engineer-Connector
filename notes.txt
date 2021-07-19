@@ -1,0 +1,1 @@
+mongoURL:'mongodb+srv://swx76:<password>@engconnector.cpd1t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
