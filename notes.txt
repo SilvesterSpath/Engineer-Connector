@@ -1,1 +1,9 @@
 mongoURL:'mongodb+srv://swx76:<password>@engconnector.cpd1t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+
+3/1
+	- for the req.body to work we have to initialize the body parses middleware in the server.js
+// Init middleware for body parser
+app.use(express.json({ extended: false }));
+
+3/11
+	- gravatar 8:00
