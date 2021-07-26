@@ -7,3 +7,20 @@ app.use(express.json({ extended: false }));
 
 3/11
 	- gravatar 8:00
+
+3/12
+	- https://github.com/auth0/node-jsonwebtoken
+	- with mongoose using monogDB we don't have to use ._id only .id
+3/13
+	- creating custom middleware
+	- in the first version of this course we used 'passport' wich is a middleware that does stuff for us, but its very heavy and made things more difficult
+	- if I want to use facebook login or twitter login it would be useful
+	- in the verification porcess we take the request object and assign a value to user (req.user = decoded.user)
+	- just puttin the auth middleware as a second parameter (argument is the actaul value)
+	- if we making a call to our database we use a try/catch blok because of the async-await
+	- because we have set the req.user to the decoded user wich is the userId we simply set the .findById(req.user.id)
+	- because we don't want to return the password we use .select('-password')
+
+3/14
+	- we need to be able to login with users that are already in the database
+	- its similar to users register
