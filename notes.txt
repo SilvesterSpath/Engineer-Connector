@@ -24,3 +24,8 @@ app.use(express.json({ extended: false }));
 3/14
 	- we need to be able to login with users that are already in the database
 	- its similar to users register
+
+4/15
+	- making a profile model
+	- in the Schema the user object is referenced to the 'user' model
+	- as far as the skills: type: [String], in react this would be as a comma separated value list, and after that we will use jacascript to turn it into an array
