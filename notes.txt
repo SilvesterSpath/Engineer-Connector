@@ -29,3 +29,10 @@ app.use(express.json({ extended: false }));
 	- making a profile model
 	- in the Schema the user object is referenced to the 'user' model
 	- as far as the skills: type: [String], in react this would be as a comma separated value list, and after that we will use jacascript to turn it into an array
+
+4/16 
+	- in the get current user profile route, we need to get the users id from the token and find with this token the corresponding user
+
+4/17
+	- create profile for the logged in user
+	- 
