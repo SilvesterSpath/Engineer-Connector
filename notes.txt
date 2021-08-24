@@ -35,4 +35,4 @@ app.use(express.json({ extended: false }));
 
 4/17
 	- create profile for the logged in user
-	- 
+	- Profile.findOne({user: req.user.id}) here 'user' is the mongoose ObjectID and the req.user.id comes from the token
