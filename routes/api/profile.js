@@ -54,33 +54,32 @@ router.post(
       facebook,
       twitter,
       instagram,
-      linkedin
+      linkedin,
     } = req.body;
 
     // Build profil object
     const profileFields = {};
     profileFields.user = req.user.id;
-    if(company)  profileFields.company = company;
-    if(website)  profileFields.website = website;
-    if(location)  profileFields.location = location;
-    if(bio)  profileFields.bio = bio;
-    if(status)  profileFields.status = status;
-    if(githubusername)  profileFields.githubusername = githubusername;
-    if (skills){      
-      profileFields.skills = skills.split(',').map(i => i.trim())
+    if (company) profileFields.company = company;
+    if (website) profileFields.website = website;
+    if (location) profileFields.location = location;
+    if (bio) profileFields.bio = bio;
+    if (status) profileFields.status = status;
+    if (githubusername) profileFields.githubusername = githubusername;
+    if (skills) {
+      profileFields.skills = skills.split(',').map((i) => i.trim());
     }
 
     // Build social object
     profileFields.social = {};
-    if(youtube)  profileFields.social.youtube = youtube;
-    if(facebook)  profileFields.social.facebook = facebook;
-    if(twitter)  profileFields.social.twitter = twitter;
-    if(instagram)  profileFields.social.instagram = instagram;
-    if(linkedin)  profileFields.social.linkedin = linkedin;
-
+    if (youtube) profileFields.social.youtube = youtube;
+    if (facebook) profileFields.social.facebook = facebook;
+    if (twitter) profileFields.social.twitter = twitter;
+    if (instagram) profileFields.social.instagram = instagram;
+    if (linkedin) profileFields.social.linkedin = linkedin;
 
     try {
-      let profile = await Profile.findOne({ user: req.user.id })
+      let profile = await Profile.findOne({ user: req.user.id });
 
       if (profile) {
         // Update
@@ -90,19 +89,18 @@ router.post(
           { new: true }
         );
 
-        return res.json(profile)
+        return res.json(profile);
       }
 
       // Create
       profile = await new Profile(profileFields);
 
       await profile.save();
-      res.json(profile)
+      res.json(profile);
     } catch (error) {
       console.error(error.message);
-      res.status(500).send('Server Error')
+      res.status(500).send('Server Error');
     }
-
   }
 );
 
