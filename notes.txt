@@ -36,3 +36,20 @@ app.use(express.json({ extended: false }));
 4/17
 	- create profile for the logged in user
 	- Profile.findOne({user: req.user.id}) here 'user' is the mongoose ObjectID and the req.user.id comes from the token
+
+4/18
+	- get all profiles and get profile by id
+
+4/19
+	- delete a not just a profile but a user completely
+	- because I dont need to get anything so its sufficiant without a variable...
+await Profile.findOneAndRemove({user: })
+	- this route is private so we should use the auth middleware
+
+4/20
+	- to add experience and education we use a 'PUT' requesr because these are separate entities
+	- it could be a 'POST' requrest, but we choose 'PUT' because basically we add extra data to an existing profile
+	- since we checking for error, we want to create an 'errors' variable for validationsresult(req)
+	 - if errors not empty we send in json the errors object wich has an array() method wich than gives us our errors
+	- because this experiences is an embedded array in mongoDB it will get a unique ID
+	- this way unlike in a SQL database we shouldn't add all relations to a separate table we get the structure in one collection
