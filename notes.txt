@@ -53,3 +53,6 @@ await Profile.findOneAndRemove({user: })
 	 - if errors not empty we send in json the errors object wich has an array() method wich than gives us our errors
 	- because this experiences is an embedded array in mongoDB it will get a unique ID
 	- this way unlike in a SQL database we shouldn't add all relations to a separate table we get the structure in one collection
+
+4/21
+	- delete experience route
