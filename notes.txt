@@ -56,3 +56,10 @@ await Profile.findOneAndRemove({user: })
 
 4/21
 	- delete experience route
+4/22
+	- add and delete education
+4/23
+	- get github repos
+
+5/24
+	- because we are logged in we get the token and inside it is the id and this is all in the 'req' body
