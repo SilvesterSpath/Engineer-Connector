@@ -63,3 +63,9 @@ await Profile.findOneAndRemove({user: })
 
 5/24
 	- because we are logged in we get the token and inside it is the id and this is all in the 'req' body
+
+5/27
+	- likes
+
+5/28
+	- comments

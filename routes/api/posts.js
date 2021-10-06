@@ -158,4 +158,77 @@ router.put('/unlike/:id', authMid, async (req, res) => {
   }
 });
 
+// @route   POST api/posts/comment/:id
+// @desc    Create a comment on a post
+// @access  Private
+router.post(
+  '/comment/:id',
+  [authMid, [check('text', 'Text is required').not().isEmpty()]],
+  async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+
+    try {
+      const user = await User.findById(req.user.id).select('-password'); // because we are logged in we get the token and inside it is the id and this is all in the 'req' body
+      const post = await Post.findById(req.params.id);
+
+      // because comments are not an actual collection in the database its gonna be an object
+      const newComment = {
+        text: req.body.text,
+        name: user.name,
+        avatar: user.avatar,
+        user: req.user.id,
+      };
+
+      post.comments.unshift(newComment);
+
+      await post.save(); // we don't need to put it in a variable just save it
+
+      res.json(post.comments);
+    } catch (error) {
+      console.error(error.message);
+      res.status(500).send('Server Error');
+    }
+  }
+);
+
+// @route   DELETE api/posts/comment/:post_id/:comment_id
+// @desc    DELETE comment
+// @access  Private
+router.delete('/comment/:id/:comment_id', authMid, async (req, res) => {
+  try {
+    // Find post and comment
+    const post = await Post.findById(req.params.id);
+
+    // Pull out comment
+    const comment = post.comments.find((i) => i.id === req.params.comment_id);
+
+    // Make sure comment exists
+    if (!comment) {
+      return res.status(404).json({ msg: 'Comment does not exist' });
+    }
+
+    // Check user
+    if (comment.user.toString() !== req.user.id) {
+      return res.status(401).json({ msg: 'User not authorized' });
+    }
+
+    // Get remove index
+    const removeIdx = post.comments
+      .map((i) => i.user.toString())
+      .indexOf(req.user.id);
+
+    // Remove comment
+    post.comments.splice(removeIdx, 1);
+
+    await post.save();
+    res.json(post.comments);
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send('Server Error');
+  }
+});
+
 module.exports = router;
