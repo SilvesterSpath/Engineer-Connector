@@ -3,14 +3,15 @@ import React from 'react';
 export const Profiles = () => {
   return (
     <div>
-      <h1 class='large text-primary'>Developers</h1>
-      <p class='lead'>
-        <i class='fab fa-connectdevelop'></i> Browse and connect with developers
+      <h1 className='large text-primary'>Developers</h1>
+      <p className='lead'>
+        <i className='fab fa-connectdevelop'></i> Browse and connect with
+        developers
       </p>
-      <div class='profiles'>
-        <div class='profile bg-light'>
+      <div className='profiles'>
+        <div className='profile bg-light'>
           <img
-            class='round-img'
+            className='round-img'
             src='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
             alt=''
           />
@@ -18,33 +19,33 @@ export const Profiles = () => {
             <h2>John Doe</h2>
             <p>Developer at Microsoft</p>
             <p>Seattle, WA</p>
-            <a href='profile.html' class='btn btn-primary'>
+            <a href='profile.html' className='btn btn-primary'>
               View Profile
             </a>
           </div>
 
           <ul>
-            <li class='text-primary'>
-              <i class='fas fa-check'></i> HTML
+            <li className='text-primary'>
+              <i className='fas fa-check'></i> HTML
             </li>
-            <li class='text-primary'>
-              <i class='fas fa-check'></i> CSS
+            <li className='text-primary'>
+              <i className='fas fa-check'></i> CSS
             </li>
-            <li class='text-primary'>
-              <i class='fas fa-check'></i> JavaScript
+            <li className='text-primary'>
+              <i className='fas fa-check'></i> JavaScript
             </li>
-            <li class='text-primary'>
-              <i class='fas fa-check'></i> Python
+            <li className='text-primary'>
+              <i className='fas fa-check'></i> Python
             </li>
-            <li class='text-primary'>
-              <i class='fas fa-check'></i> C#
+            <li className='text-primary'>
+              <i className='fas fa-check'></i> C#
             </li>
           </ul>
         </div>
 
-        <div class='profile bg-light'>
+        <div className='profile bg-light'>
           <img
-            class='round-img'
+            className='round-img'
             src='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
             alt=''
           />
@@ -52,20 +53,20 @@ export const Profiles = () => {
             <h2>John Doe</h2>
             <p>Developer at Microsoft</p>
             <p>Seattle, WA</p>
-            <a href='profile.html' class='btn btn-primary'>
+            <a href='profile.html' className='btn btn-primary'>
               View Profile
             </a>
           </div>
 
           <ul>
-            <li class='text-primary'>
-              <i class='fas fa-check'></i> HTML
+            <li className='text-primary'>
+              <i className='fas fa-check'></i> HTML
             </li>
-            <li class='text-primary'>
-              <i class='fas fa-check'></i> CSS
+            <li className='text-primary'>
+              <i className='fas fa-check'></i> CSS
             </li>
-            <li class='text-primary'>
-              <i class='fas fa-check'></i> JavaScript
+            <li className='text-primary'>
+              <i className='fas fa-check'></i> JavaScript
             </li>
           </ul>
         </div>
