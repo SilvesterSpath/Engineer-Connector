@@ -69,3 +69,11 @@ await Profile.findOneAndRemove({user: })
 
 5/28
 	- comments
+
+5/29
+	- start react
+	- redux-thunk allows us to make asyncronous requests in our 'action'-s
+	- moment is a date
+	
+5/33
+	- install react router
