@@ -77,3 +77,9 @@ await Profile.findOneAndRemove({user: })
 	
 5/33
 	- install react router
+	- change class to className, 'a' and 'href' to 'Link' and 'to'
+
+5/34
+	- implementing 'state', because each input needs to have it's own state and an onChange handler (because of controlled input)
+	- we are using here html5 client side validation with the required keyword
+	- whats great about the useState hook is that a state can access from anywhere
