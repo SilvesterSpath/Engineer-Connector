@@ -105,3 +105,18 @@ await Profile.findOneAndRemove({user: })
       } catch (error) {
         console.error(error.response.data);
       }	
+
+7/36
+	- starting with redux
+
+7/37
+	-	creating the store
+
+7/38
+	- in alert.js because state is inmutable in the return statement we need to use the spread operator
+	- in alert.js we can use dispatch because of the [thunk] middleware
+
+7/39
+	- connect Register.js with the reducer with {connect}
+	- in order to do this we have to export it down
+	- connect takes in two things (state, {actions})
