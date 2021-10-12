@@ -74,7 +74,7 @@ router.post(
         },
         (err, token) => {
           if (err) throw err;
-          res.json({ token });
+          res.json({ token }); //this is the res.data on the frontend object token
         }
       );
     } catch (error) {

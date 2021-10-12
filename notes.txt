@@ -70,16 +70,38 @@ await Profile.findOneAndRemove({user: })
 5/28
 	- comments
 
-5/29
+6/29
 	- start react
 	- redux-thunk allows us to make asyncronous requests in our 'action'-s
 	- moment is a date
 	
-5/33
+6/33
 	- install react router
 	- change class to className, 'a' and 'href' to 'Link' and 'to'
 
-5/34
+6/34
 	- implementing 'state', because each input needs to have it's own state and an onChange handler (because of controlled input)
 	- we are using here html5 client side validation with the required keyword
 	- whats great about the useState hook is that a state can access from anywhere
+
+6/35
+	- making the same request on the frontend side as in postman in Register.js:
+	      const newUser = {
+        name,
+        email,
+        password,
+      };
+
+      try {
+        const config = {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        };
+        const body = JSON.stringify(newUser);
+
+        const res = await axios.post('/api/users', body, config); // we can do this because we added the proxy server
+        console.log(res.data); // this should be the token
+      } catch (error) {
+        console.error(error.response.data);
+      }	
