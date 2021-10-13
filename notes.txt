@@ -120,3 +120,8 @@ await Profile.findOneAndRemove({user: })
 	- connect Register.js with the reducer with {connect}
 	- in order to do this we have to export it down
 	- connect takes in two things (state, {actions})
+	- with connect the component should be only const 'component' and at the bottom should be export default connect()(component)
+	- 'racf' is for components 'rafcp' is for components with proptypes
+	- mapStateToProps does what it is called, map the required state to a usable prop to the component
+	- the Alert.js component should be put in above Switch because Switch only have Routes
+	- in the connect we should put mapStateToProps and if it is than an {action}

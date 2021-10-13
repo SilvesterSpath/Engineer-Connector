@@ -1,13 +1,11 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export const Login = () => {
+const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
-
-  const { email, password } = formData;
 
   const onChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

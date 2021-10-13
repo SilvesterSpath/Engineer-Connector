@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Profiles = () => {
+const Profiles = () => {
   return (
     <div>
       <h1 className='large text-primary'>Developers</h1>
@@ -74,3 +74,5 @@ export const Profiles = () => {
     </div>
   );
 };
+
+export default Profiles;

@@ -1,24 +1,16 @@
 import { REMOVE_ALERT, SET_ALERT } from '../actions/types';
 
-const initialState = [
-  /*   {
-    id: 1,
-    msg: 'Please log in',
-    alertType: 'success',
-  }, */
-];
+const initialState = [];
 
-export const alertReducer = (state = initialState, action) => {
-  const { type, payload } = action;
-
-  switch (type) {
+function alertReducer(state = initialState, action) {
+  switch (action.type) {
     case SET_ALERT:
-      return [...state, payload];
+      return [...state, action.payload];
     case REMOVE_ALERT:
-      return state.filter((i) => i.id !== payload);
+      return state.filter((i) => i.id !== action.payload);
     default:
       return state;
   }
-};
+}
 
 export default alertReducer;
