@@ -125,3 +125,6 @@ await Profile.findOneAndRemove({user: })
 	- mapStateToProps does what it is called, map the required state to a usable prop to the component
 	- the Alert.js component should be put in above Switch because Switch only have Routes
 	- in the connect we should put mapStateToProps and if it is than an {action}
+
+8/40
+	- in authReducer.js the isAuthenticated variable is 'null' by default, and later will be either true or false, because this way can I ensure that the logged in user will see different content
