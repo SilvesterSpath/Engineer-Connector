@@ -128,3 +128,15 @@ await Profile.findOneAndRemove({user: })
 
 8/40
 	- in authReducer.js the isAuthenticated variable is 'null' by default, and later will be either true or false, because this way can I ensure that the logged in user will see different content
+
+8/41
+	- because jsonwebtoken is stateless once we register the user it doesn't stay there, we have to keep making a request to the backend
+	- this route will be in the backend GET('/api/auth') this will send back the user validated via the token
+	- we will hit this all the time in order to know that there is a authenticated user
+	- in authActions.js at loadUser() we want to see if there is a token, and than put it in a global header (x-auth-token)
+	- in the file structure we put it in a separate file 'utils'
+	- we do this because if we have a token we want to send it with every request
+	- we will, every time that authentication fail, clear the token from local storage
+
+8/42
+	- 
