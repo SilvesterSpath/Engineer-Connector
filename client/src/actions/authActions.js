@@ -7,7 +7,7 @@ export const register =
   ({ name, email, password }) =>
   async (dispatch) => {
     const config = {
-      header: {
+      headers: {
         'Content-Type': 'application/json',
       },
     };
@@ -22,7 +22,6 @@ export const register =
       });
     } catch (error) {
       const errors = error.response.data.errors;
-      console.log(errors);
 
       if (errors) {
         errors.forEach((i) => dispatch(setAlert(i.msg, 'danger')));
