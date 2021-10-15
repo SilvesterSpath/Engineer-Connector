@@ -139,4 +139,4 @@ await Profile.findOneAndRemove({user: })
 	- we will, every time that authentication fail, clear the token from local storage
 
 8/42
-	- 
+	- if isAuthenticated is true we want to redirect..
