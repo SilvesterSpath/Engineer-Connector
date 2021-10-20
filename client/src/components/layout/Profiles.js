@@ -12,7 +12,7 @@ const Profiles = () => {
         <div className='profile bg-light'>
           <img
             className='round-img'
-            src='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+            src='https://www.gravatar.com/avatar/5991c864c47cacd84dba0de95f7eee0f?s=200&r=pg&d=mm'
             alt=''
           />
           <div>
@@ -46,7 +46,7 @@ const Profiles = () => {
         <div className='profile bg-light'>
           <img
             className='round-img'
-            src='https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50?s=200'
+            src='https://www.gravatar.com/avatar/5991c864c47cacd84dba0de95f7eee0f?s=200&r=pg&d=mm'
             alt=''
           />
           <div>
