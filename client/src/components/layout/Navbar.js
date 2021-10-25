@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ loading, isAuthenticated }) => {
   return (
     <nav className='navbar bg-dark'>
       <h1>
@@ -24,4 +26,14 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+Navbar.poptype = {
+  isAuthenticated: PropTypes.func.isRequired,
+  loading: PropTypes.bool,
+};
+
+const mapStateToProps = (state) => ({
+  isAuthenticated: state.isAuthenticated,
+  loading: state.loading,
+});
+
+export default connect(mapStateToProps, {})(Navbar);

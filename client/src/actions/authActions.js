@@ -63,34 +63,32 @@ export const register =
   };
 
 // Login User
-export const login =
-  ({ email, password }) =>
-  async (dispatch) => {
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-    const body = JSON.stringify({ email, password }); // prepairing the data to be send
-
-    try {
-      const res = await axios.post('/api/auth', body, config);
-
-      dispatch({
-        type: LOGIN_SUCCESS,
-        payload: res.data,
-      });
-
-      dispatch(loadUser());
-    } catch (error) {
-      const errors = error.response.data.errors;
-
-      if (errors) {
-        errors.forEach((i) => dispatch(setAlert(i.msg, 'danger')));
-      }
-
-      dispatch({
-        type: LOGIN_FAIL,
-      });
-    }
+export const login = (email, password) => async (dispatch) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
   };
+  const body = JSON.stringify({ email, password }); // prepairing the data to be send
+
+  try {
+    const res = await axios.post('/api/auth', body, config);
+
+    dispatch({
+      type: LOGIN_SUCCESS,
+      payload: res.data,
+    });
+
+    dispatch(loadUser());
+  } catch (error) {
+    const errors = error.response.data.errors;
+
+    if (errors) {
+      errors.forEach((i) => dispatch(setAlert(i.msg, 'danger')));
+    }
+
+    dispatch({
+      type: LOGIN_FAIL,
+    });
+  }
+};
