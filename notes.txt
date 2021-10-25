@@ -140,5 +140,9 @@ await Profile.findOneAndRemove({user: })
 
 8/42
 	- bringing into a component a 'state' or an 'action' is different.
-	- the action is through props, the state through mapStateToProps (from the reducer)
+	- the action is through props, the state through mapStateToProps (from the reducer, with 'connect') 
 	- but after bringing back the state with mapStateToProps this will be a prop so I have to add it to the proptypes
+
+8/43
+	- in a react component an expression is in a '{}'
+	- instead of {!loading ? '' : null} I can use {!loading && ''}
