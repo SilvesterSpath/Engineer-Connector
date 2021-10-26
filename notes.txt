@@ -146,3 +146,12 @@ await Profile.findOneAndRemove({user: })
 8/43
 	- in a react component an expression is in a '{}'
 	- instead of {!loading ? '' : null} I can use {!loading && ''}
+
+9/44
+	- dashboard:
+	- dashboard is going to be broken up into a few different components
+	- here we will fetch our data using an action and then bring in the redux-state and then will pass it down to other components like experience and education components
+	- now we want to create the private component in order to avoid seeing the 'dashboard' while we are logged out
+	- create folder 'routing' inside of it PrivateRoute.js
+	- destructur the component as a prop, and we have to bring in authstate with 'connect'
+	- the ...rest indicates custom props

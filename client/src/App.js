@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
+import Dashboard from './components/dashboard/Dashboard';
 import Login from './components/auth/Login';
 import Profiles from './components/layout/Profiles';
 import Alert from './components/layout/Alert';
@@ -12,6 +13,7 @@ import { Provider } from 'react-redux'; //this will combine react and redux
 import store from './store';
 import { loadUser } from './actions/authActions';
 import setAuthToken from './utils/set-auth-token';
+import PrivateRoute from './components/routing/PrivateRoute';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -34,6 +36,7 @@ const App = () => {
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
               <Route exact path='/profiles' component={Profiles} />
+              <PrivateRoute exact path='/dashboard' component={Dashboard} />
             </Switch>
           </section>
         </Fragment>
