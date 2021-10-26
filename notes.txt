@@ -155,3 +155,10 @@ await Profile.findOneAndRemove({user: })
 	- create folder 'routing' inside of it PrivateRoute.js
 	- destructur the component as a prop, and we have to bring in authstate with 'connect'
 	- the ...rest indicates custom props
+
+9/45
+	- in profileReducer repos is for github repositories
+	- we want to get the user's profile (via call the profileAction) as soon as we go to the dashboard
+	- useEffect takes a callback function
+	- 
+

@@ -15,12 +15,11 @@ import { loadUser } from './actions/authActions';
 import setAuthToken from './utils/set-auth-token';
 import PrivateRoute from './components/routing/PrivateRoute';
 
-if (localStorage.token) {
-  setAuthToken(localStorage.token);
-}
-
 const App = () => {
   useEffect(() => {
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
     store.dispatch(loadUser());
   }, []);
 
