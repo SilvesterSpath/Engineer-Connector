@@ -20,6 +20,7 @@ const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
             if (i.user._id === user._id) {
               return i.website;
             }
+            return '';
           })}
         </div>
       ) : (
