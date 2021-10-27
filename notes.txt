@@ -160,5 +160,7 @@ await Profile.findOneAndRemove({user: })
 	- in profileReducer repos is for github repositories
 	- we want to get the user's profile (via call the profileAction) as soon as we go to the dashboard
 	- useEffect takes a callback function
-	- 
 
+9/46
+	- we don't want to show the landing page while we are logged in
+	- we use 'connect' because we want to see if there is a user logged in
