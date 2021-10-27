@@ -8,12 +8,25 @@ const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
     getCurrentProfile();
   }, [getCurrentProfile]);
 
-  console.log('profileState: ', profileState);
-  console.log('authState: ', authState);
+  const { profile } = profileState;
+  const { user } = authState;
 
-  /* const { profile } = profileState; */
-
-  return <div>Dashboard: {/* {profile.skills} */}</div>;
+  return (
+    <div>
+      Dashboard:{' '}
+      {profile ? (
+        <div>
+          {profile.map((i) => {
+            if (i.user._id === user._id) {
+              return i.website;
+            }
+          })}
+        </div>
+      ) : (
+        ''
+      )}
+    </div>
+  );
 };
 
 Dashboard.propTypes = {
