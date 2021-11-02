@@ -164,3 +164,10 @@ await Profile.findOneAndRemove({user: })
 9/46
 	- we don't want to show the landing page while we are logged in
 	- we use 'connect' because we want to see if there is a user logged in
+
+9/47
+	- CreateProfile.js with 'racfp' (with proptypes) 
+	- education and experience will be on another component
+	- we want the social media query be hidden by default
+	- so for that we will have another piece of state
+	- to grab the data from the form I should put in every field a value={} and an onChange={(e)=>onChange(e)} property
