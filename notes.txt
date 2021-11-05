@@ -171,3 +171,11 @@ await Profile.findOneAndRemove({user: })
 	- we want the social media query be hidden by default
 	- so for that we will have another piece of state
 	- to grab the data from the form I should put in every field a value={} and an onChange={(e)=>onChange(e)} property
+
+9/48
+	- with history.push() I can redirect to the client side
+	- if I want to display an error in the setAlert() function, then I loop through the error.response.data.errors array and display the error message
+	- as for the reducer we already handled the GET_PROFILE and PROFILE_ERROR, wich are doing the same exact thing in this time
+	- 'withRouter' allows us to redirect from the action similar to history.push
+	- I need to add this when I connect the component
+	- without this I can't use the history object
