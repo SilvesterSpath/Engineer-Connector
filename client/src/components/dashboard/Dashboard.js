@@ -4,6 +4,7 @@ import { getCurrentProfile } from '../../actions/profileActions';
 import { connect } from 'react-redux';
 import Loader from '../layout/Loader';
 import { Link } from 'react-router-dom';
+import { DashboardAct } from './DashboardAct';
 
 const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
   useEffect(() => {
@@ -12,7 +13,6 @@ const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
 
   const { user } = authState;
   const { profile_me, loading } = profileState;
-  console.log(profileState);
 
   let buffer = [];
 
@@ -27,10 +27,9 @@ const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
       {profile_me !== null ? (
         <Fragment>
           {profile_me.map((i) => {
-            console.log(i);
             if (i.user._id === user._id) {
               buffer.push(user._id);
-              return i.website;
+              return <DashboardAct key={user.id} />;
             } else {
               return ' ';
             }

@@ -179,3 +179,6 @@ await Profile.findOneAndRemove({user: })
 	- 'withRouter' allows us to redirect from the action similar to history.push
 	- I need to add this when I connect the component
 	- without this I can't use the history object
+
+9/49
+	- in 'EditProfile.js' we need to bring in useEffect in order to be able to run 'getCurrentProfile()' to fetch the data and send it down through the state
