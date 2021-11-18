@@ -3,11 +3,11 @@ import {
   GET_PROFILE,
   GET_PROFILE_ME,
   PROFILE_ERROR,
+  UPDATE_PROFILE,
 } from '../actions/types';
 
 const initialState = {
   profile: null,
-  profile_me: [],
   profiles: [],
   repos: [],
   loading: true,
@@ -16,7 +16,7 @@ const initialState = {
 
 function profileReducer(state = initialState, action) {
   switch (action.type) {
-    case GET_PROFILE:
+    case UPDATE_PROFILE:
       return {
         ...state,
         profile: action.payload,
@@ -25,7 +25,7 @@ function profileReducer(state = initialState, action) {
     case GET_PROFILE_ME:
       return {
         ...state,
-        profile_me: action.payload,
+        profiles: action.payload,
         loading: false,
       };
     case PROFILE_ERROR:

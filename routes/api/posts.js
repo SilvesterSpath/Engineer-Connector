@@ -80,9 +80,7 @@ router.get('/:id', authMid, async (req, res) => {
 router.delete('/:id', authMid, async (req, res) => {
   try {
     // Find post
-    console.log(req.params.id);
     const post = await Post.findById(req.params.id);
-    console.log(post);
 
     // Check for post
     if (!post) {

@@ -44,12 +44,12 @@ const EditProfile = ({
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
   const { user } = authState;
-  const { profile_me, loading } = profileState;
+  const { profiles, loading } = profileState;
 
   useEffect(() => {
     getCurrentProfile();
-    const profile = profile_me
-      ? profile_me.filter((i) => i.user._id === user._id)
+    const profile = profiles
+      ? profiles.filter((i) => i.user._id === user._id)
       : null;
 
     setFormData({

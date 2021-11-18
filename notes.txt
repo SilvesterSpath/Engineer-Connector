@@ -182,3 +182,14 @@ await Profile.findOneAndRemove({user: })
 
 9/49
 	- in 'EditProfile.js' we need to bring in useEffect in order to be able to run 'getCurrentProfile()' to fetch the data and send it down through the state
+
+9/50
+	- create addExperience() in profileActions.js
+	- because I send data I need 'contenct Type'
+	- here we want to redirect in any case, no need to (if edit)
+	- to accomplish complex logic I can create another state
+	- like in the 'to Data' wich is dependable to the 'current job' checkbox
+	- here I should be able to accomplish the 'onChange()' and the 'toggleDisbled' functionality
+	- because the state is inmutable I have to spread the state in the setFormData() function
+	- in the formFields I have to use the 'value' and the 'onChange' properties
+	- !error await profile.findOne() instead of await profile.find() in the reducer there is a conflict

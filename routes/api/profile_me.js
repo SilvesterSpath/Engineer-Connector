@@ -7,9 +7,9 @@ const { check, validationResult } = require('express-validator');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 
-// @route   GET api/profile
+// @route   GET api/profile_me
 // @desc    Get all profiles
-// @access  Public
+// @access  Private
 router.get('/', authMid, async (req, res) => {
   try {
     const profiles = await Profile.find().populate('user', ['name', 'avatar']);

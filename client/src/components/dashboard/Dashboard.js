@@ -12,11 +12,11 @@ const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
   }, [getCurrentProfile]);
 
   const { user } = authState;
-  const { profile_me, loading } = profileState;
+  const { profiles, loading } = profileState;
 
   let buffer = [];
 
-  return loading && profile_me === null ? (
+  return loading && profiles === null ? (
     <Loader />
   ) : (
     <Fragment>
@@ -24,12 +24,12 @@ const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
       <p className='lead'>
         <i className='fas fa-user'></i> Welcome {user && user.name}
       </p>{' '}
-      {profile_me !== null ? (
+      {profiles !== null ? (
         <Fragment>
-          {profile_me.map((i) => {
+          {profiles.map((i) => {
             if (i.user._id === user._id) {
               buffer.push(user._id);
-              return <DashboardAct key={user.id} />;
+              return <DashboardAct key={user._id} />;
             } else {
               return ' ';
             }
