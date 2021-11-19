@@ -12,11 +12,11 @@ const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
   }, [getCurrentProfile]);
 
   const { user } = authState;
-  const { profiles, loading } = profileState;
+  const { profile, loading } = profileState;
 
   let buffer = [];
 
-  return loading && profiles === null ? (
+  return loading && profile === null ? (
     <Loader />
   ) : (
     <Fragment>
@@ -24,21 +24,11 @@ const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
       <p className='lead'>
         <i className='fas fa-user'></i> Welcome {user && user.name}
       </p>{' '}
-      {profiles !== null ? (
+      {profile !== null ? (
         <Fragment>
-          {profiles.map((i) => {
-            if (i.user._id === user._id) {
-              buffer.push(user._id);
-              return <DashboardAct key={user._id} />;
-            } else {
-              return ' ';
-            }
-          })}
+          <DashboardAct />
         </Fragment>
       ) : (
-        ''
-      )}
-      {buffer.length === 0 && (
         <Fragment>
           <div>You have not yet setup a profile, please add some info!</div>
           <Link to='/create-profile' className='btn btn-primary my-1'>

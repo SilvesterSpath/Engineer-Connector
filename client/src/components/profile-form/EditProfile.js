@@ -44,29 +44,24 @@ const EditProfile = ({
   const [displaySocialInputs, toggleSocialInputs] = useState(false);
 
   const { user } = authState;
-  const { profiles, loading } = profileState;
+  const { profile, loading } = profileState;
 
   useEffect(() => {
     getCurrentProfile();
-    const profile = profiles
-      ? profiles.filter((i) => i.user._id === user._id)
-      : null;
-
     setFormData({
-      company: loading || !profile[0].company ? '' : profile[0].company,
-      website: loading || !profile[0].website ? '' : profile[0].website,
-      location: loading || !profile[0].location ? '' : profile[0].location,
-      status: loading || !profile[0].status ? '' : profile[0].status,
-      skills: loading || !profile[0].skills ? '' : profile[0].skills.join(','),
+      company: loading || !profile.company ? '' : profile.company,
+      website: loading || !profile.website ? '' : profile.website,
+      location: loading || !profile.location ? '' : profile.location,
+      status: loading || !profile.status ? '' : profile.status,
+      skills: loading || !profile.skills ? '' : profile.skills.join(','),
       githubusername:
-        loading || !profile[0].githubusername ? '' : profile[0].githubusername,
-      bio: loading || !profile[0].bio ? '' : profile[0].bio,
-      twitter: loading || !profile[0].social ? '' : profile[0].social.twitter,
-      facebook: loading || !profile[0].social ? '' : profile[0].social.facebook,
-      linkedin: loading || !profile[0].social ? '' : profile[0].social.linkedin,
-      youtube: loading || !profile[0].social ? '' : profile[0].social.youtube,
-      instagram:
-        loading || !profile[0].social ? '' : profile[0].social.instagram,
+        loading || !profile.githubusername ? '' : profile.githubusername,
+      bio: loading || !profile.bio ? '' : profile.bio,
+      twitter: loading || !profile.social ? '' : profile.social.twitter,
+      facebook: loading || !profile.social ? '' : profile.social.facebook,
+      linkedin: loading || !profile.social ? '' : profile.social.linkedin,
+      youtube: loading || !profile.social ? '' : profile.social.youtube,
+      instagram: loading || !profile.social ? '' : profile.social.instagram,
     });
   }, [loading]);
 

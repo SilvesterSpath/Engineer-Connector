@@ -50,7 +50,7 @@ router.put(
         'avatar',
       ]);
 
-      console.log('req.user.id: ', typeof req.user.id);
+      /* console.log('req.user.id: ', typeof req.user.id); */
       const profile = await profiles.filter(
         (i) => String(i.user._id) === req.user.id
       );
@@ -59,7 +59,7 @@ router.put(
 
       await profile[0].save();
 
-      res.json(profile);
+      res.json(profile[0]);
     } catch (error) {
       console.error(error.message);
       res.status(500).send('Server Error');

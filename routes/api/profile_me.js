@@ -13,7 +13,11 @@ const User = require('../../models/User');
 router.get('/', authMid, async (req, res) => {
   try {
     const profiles = await Profile.find().populate('user', ['name', 'avatar']);
-    res.json(profiles);
+    const profile = await profiles.filter(
+      (i) => String(i.user._id) === req.user.id
+    );
+
+    res.json(profile[0]);
   } catch (error) {
     console.error(error.message);
     res.status(500).send('Server Error');
