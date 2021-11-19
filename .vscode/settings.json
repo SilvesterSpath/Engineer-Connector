@@ -1,11 +1,11 @@
-{
- 
-  "emmet.preferences": {
-
-   
-  },
+{ 
   "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
-  
+    "javascript": "javascriptreact",
+    "razor": "html",
+    "plaintext": "pug"
   },
+  "emmet.showSuggestionsAsSnippets": true,
+  "emmet.triggerExpansionOnTab": true,
+  "emmet.showExpandedAbbreviation": "inMarkupAndStylesheetFilesOnly"
+  
 }

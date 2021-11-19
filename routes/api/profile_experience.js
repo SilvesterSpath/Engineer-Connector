@@ -50,7 +50,6 @@ router.put(
         'avatar',
       ]);
 
-      /* console.log('req.user.id: ', typeof req.user.id); */
       const profile = await profiles.filter(
         (i) => String(i.user._id) === req.user.id
       );

@@ -193,3 +193,8 @@ await Profile.findOneAndRemove({user: })
 	- because the state is inmutable I have to spread the state in the setFormData() function
 	- in the formFields I have to use the 'value' and the 'onChange' properties
 	- !error await profile.findOne() instead of await profile.find() in the reducer there is a conflict
+
+9/51
+	- in orderd to be able to display a proper date I use 'moment' and 'react-moment'
+	- to open settings.json 'ctrl+shift+P'
+	- 2:45
