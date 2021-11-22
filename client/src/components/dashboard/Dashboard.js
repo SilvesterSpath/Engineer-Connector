@@ -5,6 +5,8 @@ import { connect } from 'react-redux';
 import Loader from '../layout/Loader';
 import { Link } from 'react-router-dom';
 import { DashboardAct } from './DashboardAct';
+import { Experience } from './Experience';
+import { Education } from './Education';
 
 const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
   useEffect(() => {
@@ -13,8 +15,6 @@ const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
 
   const { user } = authState;
   const { profile, loading } = profileState;
-
-  let buffer = [];
 
   return loading && profile === null ? (
     <Loader />
@@ -27,6 +27,8 @@ const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
       {profile !== null ? (
         <Fragment>
           <DashboardAct />
+          <Experience experience={profile.experience} />
+          <Education education={profile.education} />
         </Fragment>
       ) : (
         <Fragment>

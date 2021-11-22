@@ -197,4 +197,6 @@ await Profile.findOneAndRemove({user: })
 9/51
 	- in orderd to be able to display a proper date I use 'moment' and 'react-moment'
 	- to open settings.json 'ctrl+shift+P'
-	- 2:45
+	- with moment I can format date 
+	- Tabnine completion interferes with 'emmet live'
+	- 
