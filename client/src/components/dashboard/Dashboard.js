@@ -5,8 +5,8 @@ import { connect } from 'react-redux';
 import Loader from '../layout/Loader';
 import { Link } from 'react-router-dom';
 import { DashboardAct } from './DashboardAct';
-import { Experience } from './Experience';
-import { Education } from './Education';
+import Experience from './Experience';
+import Education from './Education';
 
 const Dashboard = ({ getCurrentProfile, profileState, authState }) => {
   useEffect(() => {

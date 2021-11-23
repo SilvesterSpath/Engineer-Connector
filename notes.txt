@@ -199,4 +199,7 @@ await Profile.findOneAndRemove({user: })
 	- to open settings.json 'ctrl+shift+P'
 	- with moment I can format date 
 	- Tabnine completion interferes with 'emmet live'
-	- 
+
+9/52
+	- when I delete an account it shouldn't take in any paramater, because it's will know the id from the token
+	- to delete the whole profile we use the 'authReducer'
