@@ -203,3 +203,6 @@ await Profile.findOneAndRemove({user: })
 9/52
 	- when I delete an account it shouldn't take in any paramater, because it's will know the id from the token
 	- to delete the whole profile we use the 'authReducer'
+
+9/53
+	
