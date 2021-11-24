@@ -6,10 +6,10 @@ import Register from './components/auth/Register';
 import Dashboard from './components/dashboard/Dashboard';
 import CreateProfile from './components/profile-form/CreateProfile';
 import EditProfile from './components/profile-form/EditProfile';
+import Profiles from './components/profiles/Profiles';
 import AddExperience from './components/profile-form/AddExperience';
 import AddEducation from './components/profile-form/AddEducation';
 import Login from './components/auth/Login';
-import Profiles from './components/layout/Profiles';
 import Alert from './components/layout/Alert';
 import './App.css';
 // Redux

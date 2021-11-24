@@ -210,5 +210,5 @@ await Profile.findOneAndRemove({user: })
 	- This will prevent the flashing of the current profile
 
 10/54
-	- 
+	- we need to get the profilestate so in Profiles we need to use mapStateToProps
 	
