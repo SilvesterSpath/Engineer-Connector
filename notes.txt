@@ -204,5 +204,11 @@ await Profile.findOneAndRemove({user: })
 	- when I delete an account it shouldn't take in any paramater, because it's will know the id from the token
 	- to delete the whole profile we use the 'authReducer'
 
-9/53
+10/53
+	- Now we have left 3 things to do: get profile by ID, get all profiles, get github profile
+	- Before we go to the profilelist page we clear the profile state with CLEAR_PROFILE reducer
+	- This will prevent the flashing of the current profile
+
+10/54
+	- 
 	
