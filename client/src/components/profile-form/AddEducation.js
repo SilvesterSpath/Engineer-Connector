@@ -28,8 +28,8 @@ const AddEducation = ({ addEducation, history }) => {
     <Fragment>
       <h1 className='large text-primary'>Add An Experience</h1>
       <p className='lead'>
-        <i className='fas fa-code-branch'></i> Add any developer/programming
-        positions that you have had in the past
+        <i className='fas fa-code-branch'></i> Add any engineer positions that
+        you have had in the past
       </p>
       <small>* = required field</small>
       <form
@@ -62,7 +62,7 @@ const AddEducation = ({ addEducation, history }) => {
         <div className='form-group'>
           <input
             type='text'
-            placeholder='FieldofStudy'
+            placeholder='Field of Study'
             name='fieldofstudy'
             value={fieldofstudy}
             onChange={(e) => onChange(e)}
@@ -89,7 +89,7 @@ const AddEducation = ({ addEducation, history }) => {
                 toggleDisabled(!toDateDisabled);
               }}
             />{' '}
-            Current Job
+            In progress..
           </p>
         </div>
         <div className='form-group'>
@@ -109,7 +109,7 @@ const AddEducation = ({ addEducation, history }) => {
             onChange={(e) => onChange(e)}
             cols='30'
             rows='5'
-            placeholder='Job Description'
+            placeholder='Description'
           ></textarea>
         </div>
         <input type='submit' className='btn btn-primary my-1' />
