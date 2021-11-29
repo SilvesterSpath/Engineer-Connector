@@ -215,4 +215,8 @@ await Profile.findOneAndRemove({user: })
 10/56
 	- we want to bring in in Profile.js the authState as well, because we want to see if the user is logged in because if they are and the profile that they are viewing are matches we want to have an edit profile button
 	- I want the user._id from the url, so in react I can do that with props.match.params.id
+10/57
+	- if we put in the a tag the rel='noopener noreferrer' than we could avoid certain error messages in the browser
+	- if I want to show a data inside an object, I have to check for the object also not just for the data itself
+	- the skills are in an array so we have to map through they
 	
