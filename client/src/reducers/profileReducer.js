@@ -33,7 +33,7 @@ function profileReducer(state = initialState, action) {
     case GET_REPOS:
       return {
         ...state,
-        repose: action.payload,
+        repos: action.payload,
         loading: false,
       };
     case PROFILE_ERROR:

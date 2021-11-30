@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const ProfileEducation = ({ education }) => {
   return (
     <div>
-      <h3 class='text-dark'>{education.school}</h3>
+      <h3 className='text-dark'>{education.school}</h3>
       <p>
         <Moment format='YYYY/MM/DD'>{education.from}</Moment> -{' '}
         {education.current ? (
