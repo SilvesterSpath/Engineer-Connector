@@ -220,6 +220,10 @@ await Profile.findOneAndRemove({user: })
 	- if I want to show a data inside an object, I have to check for the object also not just for the data itself
 	- the skills are in an array so we have to map through they
 
-10/58
-	- 
+11/60
+	- Now comes the 'post' part of the frontend
+	- first in reducers/index.js create a 'postReducer'
+	- The workflow is that whenever I want to add any recource/functionality to my application, just simple create a new reducer and action and then the components
+	- posts is privateRoute because I have to be logged in to be able to make posts
+	- after creating the route in App.js I have to add it to the navbar
 	

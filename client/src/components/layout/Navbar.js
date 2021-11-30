@@ -24,6 +24,12 @@ const Navbar = ({ authState: { loading, isAuthenticated }, logout }) => {
   const authLinks = (
     <ul>
       <li>
+        <Link to='/posts'>
+          <i className='fas fa-envelope'></i>{' '}
+          <span className='hide-sm'>Posts</span>
+        </Link>
+      </li>
+      <li>
         <Link to='/profiles'>
           <i className='fas fa-users'></i>{' '}
           <span className='hide-sm'>Engineers</span>
