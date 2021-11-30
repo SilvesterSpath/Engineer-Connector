@@ -219,4 +219,7 @@ await Profile.findOneAndRemove({user: })
 	- if we put in the a tag the rel='noopener noreferrer' than we could avoid certain error messages in the browser
 	- if I want to show a data inside an object, I have to check for the object also not just for the data itself
 	- the skills are in an array so we have to map through they
+
+10/58
+	- 
 	
