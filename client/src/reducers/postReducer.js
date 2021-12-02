@@ -1,4 +1,11 @@
-import { GET_POST, GET_POSTS, POST_ERROR } from '../actions/types';
+import {
+  GET_POST,
+  GET_POSTS,
+  POST_ERROR,
+  UPDATE_LIKES,
+  DELETE_POST,
+  ADD_POST,
+} from '../actions/types';
 
 const initialState = {
   posts: [],
@@ -17,10 +24,36 @@ function profileReducer(state = initialState, action) {
         posts: payload,
         loading: false,
       };
+    case GET_POST:
+      return {
+        ...state,
+        post: payload,
+        loading: false,
+      };
+    case ADD_POST:
+      return {
+        ...state,
+        posts: [payload, ...state.posts],
+        loading: false,
+      };
+    case DELETE_POST:
+      return {
+        ...state,
+        posts: state.posts.filter((i) => i._id !== payload),
+        loading: false,
+      };
     case POST_ERROR:
       return {
         ...state,
         error: payload,
+        loading: false,
+      };
+    case UPDATE_LIKES:
+      return {
+        ...state,
+        posts: state.posts.map((i) =>
+          i._id === payload.post_id ? { ...i, likes: payload.likes } : i
+        ),
         loading: false,
       };
     default:

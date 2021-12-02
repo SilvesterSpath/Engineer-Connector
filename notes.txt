@@ -226,4 +226,17 @@ await Profile.findOneAndRemove({user: })
 	- The workflow is that whenever I want to add any recource/functionality to my application, just simple create a new reducer and action and then the components
 	- posts is privateRoute because I have to be logged in to be able to make posts
 	- after creating the route in App.js I have to add it to the navbar
+
+11/61
+	- in PostItem I need the authState in order to display the delete button only if a post is a logged in user's post
+	
+11/62
+	- if I 'like' a post in the postAction.js I also sent the post_id in the json not just the likes array
+
+11/64
+	- Adding post
+	- in the postAction.js with the addPost function I have to set the 'config' object with the 'headers' because I send data through the frontend side with axios
+	- in the reducer I have to spread the posts array and append the payload at the end [...posts, payload] because state is inmutable
+	- in PostForm.js I don't have to use a formData object because I only have one text field
+	- in PostForm.js I have to pass in the 'text' as an object to the addPost() function
 	
