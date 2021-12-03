@@ -2,6 +2,7 @@ import axios from 'axios';
 import { setAlert } from './alertAction';
 import {
   ADD_POST,
+  DELETE_COMMENT,
   DELETE_POST,
   GET_POST,
   GET_POSTS,
@@ -133,4 +134,17 @@ export const removeLike = (post_id) => async (dispatch) => {
       },
     });
   }
+};
+
+// Delete Comment
+export const deleteComment = (post_id, comment_id) => async (dispatch) => {
+  try {
+    await axios.delete(`/api/posts/comment/${post_id}/${comment_id}`);
+
+    dispatch({
+      type: DELETE_COMMENT,
+      payload: { comment_id },
+    });
+    dispatch(setAlert('Comment has been deleted!', 'success'));
+  } catch (err) {}
 };

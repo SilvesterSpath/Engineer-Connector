@@ -5,6 +5,7 @@ import {
   UPDATE_LIKES,
   DELETE_POST,
   ADD_POST,
+  DELETE_COMMENT,
 } from '../actions/types';
 
 const initialState = {
@@ -54,6 +55,12 @@ function profileReducer(state = initialState, action) {
         posts: state.posts.map((i) =>
           i._id === payload.post_id ? { ...i, likes: payload.likes } : i
         ),
+        loading: false,
+      };
+    case DELETE_COMMENT:
+      return {
+        ...state,
+        post: state.post.comments.filter((i) => i._id !== payload),
         loading: false,
       };
     default:
