@@ -21,8 +21,6 @@ router.post(
     try {
       const user = await User.findById(req.user.id).select('-password'); // because we are logged in we get the token and inside it is the id and this is all in the 'req' body
 
-      console.log(req.user.id);
-
       const newPost = new Post({
         text: req.body.text,
         name: user.name,

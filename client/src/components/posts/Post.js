@@ -8,14 +8,10 @@ import CommentItem from './CommentItem';
 import CommentForm from './CommentForm';
 
 const Post = ({ postState: { post, loading }, match, getPostById }) => {
-  console.log(match);
   useEffect(() => {
     getPostById(match.params.id);
   }, [getPostById, match.params.id]);
 
-  if (post) {
-    console.log(post);
-  }
   return (
     <Fragment>
       {post === null || loading ? (

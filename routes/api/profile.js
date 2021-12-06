@@ -186,8 +186,6 @@ router.put(
     const { title, company, location, from, to, current, description } =
       req.body;
 
-    console.log('req.body: ', req.body);
-
     // Create experiences object
     const newExp = {
       title,

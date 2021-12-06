@@ -246,4 +246,19 @@ await Profile.findOneAndRemove({user: })
 11/66
 	- Adding comment: 
 	- Because in the reducer the 'post' is an object, I have to set it in the reducer to an object and with the ...spread operator I leave everything unchanged, except the comments array, to wich I add or rather unshift the payload. Because state is inmutable
+
+12/68
+	- Deployment
+	- Heroku is great for MERN stack applications
+	- This is a PAAS (Platform as a service)
+	- There are limitations:
+	- I cant just log in and start messing with files
+	- I cant install a database to the server, I have to use atlas
+	- To use file uploading on Heroku I have to use AmazonS3
+	- Or DigitalOcean it is a Linux container so I have to install I do whatever I want to do with it
+	- AWS
+
+12/69
+	- for production I have to create a new production.json
+	- 
 	

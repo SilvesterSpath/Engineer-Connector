@@ -136,7 +136,6 @@ export const createProfile =
 
 // Add Experience
 export const addExperience = (formData, history) => async (dispatch) => {
-  console.log('formData: ', formData);
   try {
     const config = {
       headers: {
@@ -145,8 +144,6 @@ export const addExperience = (formData, history) => async (dispatch) => {
     };
 
     const res = await axios.put('/api/profile/experience', formData, config);
-
-    console.log('res.data:', res.data);
 
     dispatch({
       type: UPDATE_PROFILE,
