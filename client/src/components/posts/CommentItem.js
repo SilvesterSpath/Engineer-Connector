@@ -18,13 +18,16 @@ const CommentItem = ({ comment, postId, authState, deleteComment }) => {
         <p className='post-date'>
           Posted on <Moment format='DD/MM/YYYY'>{comment.date}</Moment>
         </p>
-        <button
-          type='button'
-          className='btn btn-danger'
-          onClick={(e) => deleteComment(postId, comment._id)}
-        >
-          <i className='fas fa-times'></i>
-        </button>
+
+        {!authState.loading && comment.user === authState.user._id && (
+          <button
+            type='button'
+            className='btn btn-danger'
+            onClick={(e) => deleteComment(postId, comment._id)}
+          >
+            <i className='fas fa-times'></i>
+          </button>
+        )}
       </div>
     </div>
   );
