@@ -239,4 +239,11 @@ await Profile.findOneAndRemove({user: })
 	- in the reducer I have to spread the posts array and append the payload at the end [...posts, payload] because state is inmutable
 	- in PostForm.js I don't have to use a formData object because I only have one text field
 	- in PostForm.js I have to pass in the 'text' as an object to the addPost() function
+
+11/65
+	- Displaying post
+
+11/66
+	- Adding comment: 
+	- Because in the reducer the 'post' is an object, I have to set it in the reducer to an object and with the ...spread operator I leave everything unchanged, except the comments array, to wich I add or rather unshift the payload. Because state is inmutable
 	

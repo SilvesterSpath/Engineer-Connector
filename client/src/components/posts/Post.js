@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Loader from '../layout/Loader';
 import { getPostById } from '../../actions/postActions';
 import CommentItem from './CommentItem';
-import PostForm from './PostForm';
+import CommentForm from './CommentForm';
 
 const Post = ({ postState: { post, loading }, match, getPostById }) => {
   console.log(match);
@@ -36,7 +36,7 @@ const Post = ({ postState: { post, loading }, match, getPostById }) => {
               <p className='my-1'>{post.text}</p>
             </div>
           </div>
-          <PostForm />
+          <CommentForm postId={post._id} />
 
           <div className='comments'>
             {post &&

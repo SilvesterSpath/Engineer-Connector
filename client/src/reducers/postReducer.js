@@ -6,6 +6,7 @@ import {
   DELETE_POST,
   ADD_POST,
   DELETE_COMMENT,
+  ADD_COMMENT,
 } from '../actions/types';
 
 const initialState = {
@@ -57,10 +58,19 @@ function profileReducer(state = initialState, action) {
         ),
         loading: false,
       };
+    case ADD_COMMENT:
+      return {
+        ...state,
+        post: { ...state.post, comments: payload },
+        loading: false,
+      };
     case DELETE_COMMENT:
       return {
         ...state,
-        post: state.post.comments.filter((i) => i._id !== payload),
+        post: {
+          ...state.post,
+          comments: state.post.comments.filter((i) => i._id !== payload),
+        },
         loading: false,
       };
     default:

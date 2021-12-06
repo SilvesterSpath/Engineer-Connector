@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { setAlert } from './alertAction';
 import {
+  ADD_COMMENT,
   ADD_POST,
   DELETE_COMMENT,
   DELETE_POST,
@@ -136,6 +137,38 @@ export const removeLike = (post_id) => async (dispatch) => {
   }
 };
 
+// Add Comment
+export const addComment = (post_id, formData) => async (dispatch) => {
+  const config = {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  };
+
+  try {
+    const res = await axios.post(
+      `/api/posts/comment/${post_id}`,
+      formData,
+      config
+    );
+
+    dispatch({
+      type: ADD_COMMENT,
+      payload: res.data, //this is the comments array wich was sent back in the response
+    });
+
+    dispatch(setAlert('Comment Created!', 'success'));
+  } catch (error) {
+    dispatch({
+      type: POST_ERROR,
+      payload: {
+        msg: error.response.statusText,
+        status: error.response.status,
+      },
+    });
+  }
+};
+
 // Delete Comment
 export const deleteComment = (post_id, comment_id) => async (dispatch) => {
   try {
@@ -143,7 +176,7 @@ export const deleteComment = (post_id, comment_id) => async (dispatch) => {
 
     dispatch({
       type: DELETE_COMMENT,
-      payload: { comment_id },
+      payload: comment_id,
     });
     dispatch(setAlert('Comment has been deleted!', 'success'));
   } catch (err) {}
