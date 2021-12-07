@@ -29,7 +29,7 @@ function ProfileItem({ profile }) {
 
       <ul>
         {profile.skills.slice(0, 4).map((i, idx) => (
-          <li key={idx} className='text-primary'>
+          <li key={idx} className='skills'>
             <i className='fas fa-check'></i> {i}
           </li>
         ))}

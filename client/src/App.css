@@ -2,11 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rowdies&display=swap');
 
 :root {
-  --primary-color: #17a2b8;
-  --dark-color: #343a40;
-  --light-color: #f4f4f4;
+  --primary-color: #cb4533;
+  --dark-color: #2e2b2e;
+  --light-color: #87a3b3;
   --danger-color: #dc3545;
   --success-color: #28a745;
+  --backgound-color2: #f4f1f4;
 }
 
 * {
@@ -19,7 +20,7 @@ body {
   font-family: 'Mulish', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: rgb(250, 250, 250);
+  background-color: var(--backgound-color2);
   color: #333;
   overflow: scroll;
 }
@@ -75,6 +76,14 @@ img {
 
 .text-primary {
   color: var(--primary-color);
+}
+
+.text-primary.add {
+  color: var(--backgound-color2);
+}
+
+.skills {
+  color: var(--backgound-color2);
 }
 
 .text-dark {
@@ -482,7 +491,7 @@ button {
 }
 
 .post .comment-count {
-  background: var(--light-color);
+  background: var(--backgound-color2);
   color: var(--primary-color);
   padding: 0.1rem 0.2rem;
   border-radius: 5px;
