@@ -1,10 +1,9 @@
+require('dotenv').config();
 const mogoose = require('mongoose');
-const config = require('config');
-const db = config.get('mongoURI');
 
 const connectDB = async () => {
   try {
-    await mogoose.connect(db, {
+    await mogoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useFindAndModify: false,
